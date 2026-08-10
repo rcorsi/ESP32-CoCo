@@ -16,9 +16,14 @@
 |---|---|---|
 | Logitech K120 | USB1 | Confirmed working. The unit tested had a Spanish key layout, which made locating some keys difficult — a layout/labeling issue, not a compatibility one. |
 | Perixx Periboard-517 | USB1 | Confirmed working. |
-| Ziyoulang K61 RGB | USB1 | Confirmed working, reported as "a bit hokey" (exact meaning unclear — possibly minor quirks in feel/behavior). |
+| Ziyoulang K61 RGB | USB1 | Works, but **not recommended** — lacks a proper row of F-keys, making it harder to access device functions (F12 menu, F3/F4 save/load state, F9 screenshot, etc. — see [keyboard-shortcuts.md](../02-menus-and-shortcuts/keyboard-shortcuts.md)). |
 | Acer Model OM-130006A/K | USB1 | Confirmed working. |
 | HP PN: 803181-001 US | USB1 | Confirmed working. |
+| HP 310 (PN: M54849-001) | USB1 | Confirmed working. |
+| Perixx PERIBOARD-414U (Wired USB) | USB1 | Confirmed working. https://www.amazon.com/dp/B0053O9ZNQ |
+| Microsoft Natural Ergonomic Keyboard 4000 v1.0 | USB1 | Confirmed working. |
+| HP KBAR211 | USB1 | Confirmed working. |
+| Logitech K310 | USB1 | Confirmed working. |
 
 ## Known NOT to work
 
@@ -31,6 +36,15 @@
 | Case Logic Mini Keyboard (KD-300) | Connects and is recognized, but produces random characters — unusable. |
 | Cherry Stream Keyboard TKL — Model JK-85TKL | Not recognized. |
 | Keychron K14 Wireless | Not recognized. Wireless (dongle/Bluetooth) — failure may be specific to that connection method rather than the keyboard's USB HID compatibility in general. |
+| Lenovo SK8823 | Not recognized. |
+| HK Gaming GK61v2 Mechanical Keyboard | Not recognized. USB-C connector; appears to be a High Speed (480 Mbps) device — the ADuM4160 adapter workaround won't help (it only helps Full Speed/12 Mbps devices). |
+| Logitech K270 Wireless Keyboard | Not recognized. Small USB-A wireless receiver; appears to be a High Speed (480 Mbps) device — same caveat as above, the adapter workaround won't help. |
+
+## Works with the ADuM4160 adapter (not out of the box)
+
+| Keyboard | Notes |
+|---|---|
+| Aqvin QK200 (wired, USB-A) | Doesn't work out of the box, but works with the ADuM4160 adapter switched to 1.5 Mbps — most likely a 12 Mbps Full Speed keyboard. See [Practical buying guidance](#practical-buying-guidance) above for the adapter workaround. |
 
 ## Key mapping
 

@@ -10,6 +10,8 @@ Where to find help, updates, and discussion about ESP32-COCO.
 
 - **ESP32-COCO Official group** (Facebook) — https://www.facebook.com/groups/4262638377332924
 - **#esp32-coco channel** on the CoCo Discord server — active discussion with Cedric (e.g. the USB Low Speed compatibility explanation in [keyboards.md](../03-compatible-hardware/keyboards.md)). No direct channel link available (Discord channel links require server membership) — join via the server invite below, then find the channel.
+- **Cedric's original announcement thread** on the Vintage Computer Federation forum — https://forum.vcfed.org/index.php?threads/coco-2-3-clone-new-version.1252983/
+- **Fan site** — https://exileinparadise.com/esp32coco:top — independent site made by a fan of the device.
 
 ## Creator
 
@@ -21,10 +23,9 @@ Where to find help, updates, and discussion about ESP32-COCO.
 
 ## No other confirmed public presence
 
-The Facebook group above is the primary public presence. No confirmed presence yet for:
+No confirmed presence yet for:
 
 - Official website
-- Dedicated forum thread (e.g. on colorcomputerarchive.com or vcfed.org)
 
 ## Broader CoCo community (general, not ESP32-COCO specific)
 

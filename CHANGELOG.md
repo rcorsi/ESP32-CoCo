@@ -49,6 +49,11 @@ All notable changes to this documentation set are logged here (not to be confuse
 - **community-links.md**: added the CoCo Discord's **#esp32-coco channel** under Primary source, as an active discussion venue with Cedric (no direct channel link available — Discord requires server membership to link channels). Updated the general Discord server entry to note the channel's existence.
 - **keyboards.md / hardware-specs.md**: resolved the connector-type TODO — the USB ports are classic **USB-A**.
 - **keyboards.md**: removed the "Original CoCo/Tandy keyboards" section — the original CoCo keyboard is fully enclosed in the CoCo unit and connects via ribbon cable, not a realistic option to wire into ESP32-COCO, so not worth documenting as a possibility.
+- **keyboards.md**: clarified the Ziyoulang K61 RGB's "a bit hokey" note — it works, but lacks a proper F-key row, making device functions (F12 menu, save/load state, screenshot, etc.) harder to access. Marked not recommended.
+- **keyboards.md**: added HP 310 (PN: M54849-001) to known-working. Acer OM-130006A/K was a duplicate of an existing entry — skipped.
+- **keyboards.md**: added a further batch of tested keyboards. Working: Perixx PERIBOARD-414U, Microsoft Natural Ergonomic Keyboard 4000 v1.0, HP KBAR211. Not working: Lenovo SK8823, HK Gaming GK61v2 (USB-C, suspected High Speed/480 Mbps), Logitech K270 Wireless (suspected High Speed/480 Mbps via its USB-A receiver). New section "Works with the ADuM4160 adapter (not out of the box)" added, with the Aqvin QK200 as the first confirmed example of the adapter workaround described in Practical buying guidance. HP 310 and Acer OM-130006A/K from this same batch were duplicates of existing entries — skipped.
+- **community-links.md**: added Cedric's original announcement thread on the Vintage Computer Federation forum, and an independent fan site (exileinparadise.com/esp32coco). Removed the now-resolved "dedicated forum thread" line from the unconfirmed-presence list.
+- **keyboards.md**: added Logitech K310 to known-working (was mis-listed under "not working" in the source notes — corrected).
 
 ## 2026-07-17 (12)
 

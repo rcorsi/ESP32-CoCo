@@ -3,9 +3,18 @@
 Version history for ESP32-COCO device firmware. For how to actually flash a `.FLH` file, see [firmware-upgrade-menu.md](../02-menus-and-shortcuts/firmware-upgrade-menu.md).
 
 > Ordering note: versions are listed newest-first based on feature accumulation (V1.04 includes capabilities not present in V1.0.2's notes). TODO: confirm exact version numbering/order and whether "V1.04" is shorthand for "V1.0.4", plus fill in any versions between/before/after these.
-> **Current published firmware download:** https://drive.google.com/file/d/1Avexaa-GsFraal4dFbb2e44r8fiGZH3m/view
-> **V1.05 exists but is not yet published.** Confirmed by the creator — it ships on the newest board revision, but there's no public download or release notes for it yet.
-> **Going forward, firmware may fork per board revision.** There are two board revisions (V1.2, V1.3 — see [hardware-specs.md](../01-getting-started/hardware-specs.md)), and V1.3 has additional hardware (HDMI, expansion/option port). Future firmware releases are expected to be built per-revision, disabling features the older V1.2 board can't physically support.
+> **Current published firmware: V1.06**, distributed via GitHub Releases (a shift from the earlier Google Drive links) — https://github.com/mast4rbug/ESP32-CoCo/releases/tag/1.06
+> **V1.05 existed but was never published** — superseded by V1.06 below.
+> **Firmware now forks per board revision**, as expected — V1.06 ships as separate builds for board V1.2 (no HDMI) and board V1.3 (HDMI + Cassette port). See [hardware-specs.md](../01-getting-started/hardware-specs.md) for the board differences.
+> **Cross-flashing is safe.** Any firmware version can be loaded on either board revision — it won't damage the board, you'll just end up with menu options for features that board doesn't physically support.
+
+## V1.06 — Board Revision V1.2 and V1.3 (separate builds)
+
+Release: https://github.com/mast4rbug/ESP32-CoCo/releases/tag/1.06
+
+- **CoCo 3 emulation now runs at full speed** (previously ~80% speed).
+- Fixed a minor Timer bug (FF93).
+- Added support for the new game port of **Montezuma's Revenge** (ported by Lee Perkins).
 
 ## V1.04 — Board Revision V1.2
 

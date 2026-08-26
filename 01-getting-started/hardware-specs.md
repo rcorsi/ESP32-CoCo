@@ -9,7 +9,8 @@
 | SoC | ESP32-S3-WROOM-1 |
 | Flash | 8 MB |
 | PSRAM | 8 MB |
-| Internal fast RAM | 384 KB (on-chip SRAM) |
+| Internal fast RAM | 512 KB (on-chip SRAM) |
+| ROM | 384 KB |
 | Emulated CoCo RAM | 2 MB (device emulates a CoCo 3 with 2 MB of RAM) |
 | Storage | Standard SD card, **FAT32 required** |
 

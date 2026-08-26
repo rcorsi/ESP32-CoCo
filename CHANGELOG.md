@@ -2,6 +2,11 @@
 
 All notable changes to this documentation set are logged here (not to be confused with ESP32-COCO firmware changes — those belong in [02-menus-and-shortcuts/firmware-upgrade-menu.md](02-menus-and-shortcuts/firmware-upgrade-menu.md)).
 
+## 2026-08-26 (14)
+
+- **Firmware V1.06 released** — documented in `firmware-changelog.md`: CoCo 3 emulation now runs at full speed (was ~80%), fixed a Timer bug (FF93), added support for the Montezuma's Revenge game port (Lee Perkins). Ships as separate builds per board revision (V1.2 no-HDMI / V1.3 HDMI+Cassette), distributed via GitHub Releases rather than Google Drive going forward. Updated the top note block: V1.06 is now current, V1.05 confirmed superseded (never published), and added the cross-flashing safety note (any firmware works on either board, unsupported menu options just do nothing).
+- **hardware-specs.md**: corrected the ESP32-S3's on-chip memory — SRAM is 512 KB, not 384 KB (that figure was actually the chip's ROM size, added as its own row). Per the official Espressif ESP32-S3 datasheet.
+
 ## 2026-07-17 (13)
 
 - **disk-menu.md**: clarified that the Extended menu (**E**, from within the SD card file browser) is specifically what lets you create a new formatted `.DSK` or format the currently-selected `.DSK`. Resolved both the "exact menu path" and "disk sizes/formats" parts of the creating/formatting TODO — produces standard 35-track, single-sided, single-density RDOS images, ~160 KB.
@@ -54,11 +59,6 @@ All notable changes to this documentation set are logged here (not to be confuse
 - **keyboards.md**: added a further batch of tested keyboards. Working: Perixx PERIBOARD-414U, Microsoft Natural Ergonomic Keyboard 4000 v1.0, HP KBAR211. Not working: Lenovo SK8823, HK Gaming GK61v2 (USB-C, suspected High Speed/480 Mbps), Logitech K270 Wireless (suspected High Speed/480 Mbps via its USB-A receiver). New section "Works with the ADuM4160 adapter (not out of the box)" added, with the Aqvin QK200 as the first confirmed example of the adapter workaround described in Practical buying guidance. HP 310 and Acer OM-130006A/K from this same batch were duplicates of existing entries — skipped.
 - **community-links.md**: added Cedric's original announcement thread on the Vintage Computer Federation forum, and an independent fan site (exileinparadise.com/esp32coco). Removed the now-resolved "dedicated forum thread" line from the unconfirmed-presence list.
 - **keyboards.md**: added Logitech K310 to known-working (was mis-listed under "not working" in the source notes — corrected).
-
-## 2026-08-26 (14)
-
-- **Firmware V1.06 released** — documented in `firmware-changelog.md`: CoCo 3 emulation now runs at full speed (was ~80%), fixed a Timer bug (FF93), added support for the Montezuma's Revenge game port (Lee Perkins). Ships as separate builds per board revision (V1.2 no-HDMI / V1.3 HDMI+Cassette), distributed via GitHub Releases rather than Google Drive going forward. Updated the top note block: V1.06 is now current, V1.05 confirmed superseded (never published), and added the cross-flashing safety note (any firmware works on either board, unsupported menu options just do nothing).
-- **hardware-specs.md**: corrected the ESP32-S3's on-chip memory — SRAM is 512 KB, not 384 KB (that figure was actually the chip's ROM size, added as its own row). Per the official Espressif ESP32-S3 datasheet.
 
 ## 2026-07-17 (12)
 

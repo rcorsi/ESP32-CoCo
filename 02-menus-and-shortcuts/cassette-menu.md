@@ -1,15 +1,13 @@
 # Cassette Menu
 
-> TODO: verify every step below against actual device behavior.
-
 ## Background
 
 The original CoCo loaded programs from cassette tape as audio-encoded data. Emulators typically substitute `.CAS` files (raw bitstream) or `.WAV` files (actual audio recording of the cassette signal) played back to the emulated cassette input.
 
-ESP32-COCO supports two tape sources, toggled with **S** in the Cassette menu:
+ESP32-COCO supports two tape sources, toggled with **S** in the Cassette menu — **but the physical option only exists on board revision V1.3**, which has the physical cassette port hardware. Board revision **V1.2 has no physical cassette port and stays in Virtual Tape mode automatically**, with no source toggle shown. (Firmware V1.0.8+ handles this automatically — earlier firmware didn't distinguish board revisions this way.) See [hardware-specs.md](../01-getting-started/hardware-specs.md#cassette-port).
 
-- **VIRTUAL** — plays (and can save to) a `.WAV` file from the SD card, as described below. **Virtual saving is unreliable** — see [Recording / saving to cassette](#recording--saving-to-cassette).
-- **EXTERNAL** — passes through to the physical **CAS** jack (see [hardware-specs.md](../01-getting-started/hardware-specs.md)), for loading and saving with a real cassette deck exactly like an original CoCo. In this mode, `CLOAD`/`CLOADM`/`CSAVE`/`CSAVEM` trigger the **CTL** (relay) jack to start the tape playing, same as real hardware.
+- **VIRTUAL** (Virtual Tape) — plays (and can save to) a `.WAV` file from the SD card, as described below. **Virtual saving is unreliable** — see [Recording / saving to cassette](#recording--saving-to-cassette).
+- **EXTERNAL** (V1.3 only) — passes through to the physical **CAS** jack (see [hardware-specs.md](../01-getting-started/hardware-specs.md)), for loading and saving with a real cassette deck exactly like an original CoCo. In this mode, `CLOAD`/`CLOADM`/`CSAVE`/`CSAVEM` trigger the **CTL** (relay) jack to start the tape playing, same as real hardware.
 
 > The CoCo ROM here has been patched to show **actual loading progress** — a real CoCo doesn't do this.
 
@@ -48,7 +46,7 @@ ESP32-COCO supports two tape sources, toggled with **S** in the Cassette menu:
 
 ## Loading/saving from a real/external tape deck
 
-Press **S** in the Cassette menu to switch the source to **EXTERNAL**. This routes the physical **CAS** jack straight through, so a real cassette deck can be used instead of a `.WAV` file — just like on an original CoCo. `CLOAD`/`CLOADM`/`CSAVE`/`CSAVEM` trigger the **CTL** (relay) jack to start the tape automatically.
+**Board revision V1.3 only** — see [Background](#background) above. Press **S** in the Cassette menu to switch the source to **EXTERNAL**. This routes the physical **CAS** jack straight through, so a real cassette deck can be used instead of a `.WAV` file — just like on an original CoCo. `CLOAD`/`CLOADM`/`CSAVE`/`CSAVEM` trigger the **CTL** (relay) jack to start the tape automatically.
 
 The **CAS** jack is bidirectional (in and out on the same jack), unlike a real tape deck's separate mono in/out jacks — connecting one requires a **1/8" stereo-to-mono Y-splitter cable**. See [hardware-specs.md](../01-getting-started/hardware-specs.md).
 

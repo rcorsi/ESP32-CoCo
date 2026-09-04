@@ -7,14 +7,19 @@
 ## Update methods
 
 - **SD card flash file**, via an on-device menu — no separate USB/serial flashing tool needed for routine updates.
-- Firmware files are named like `CC3-BOARDV1-2-FW1-0-2.FLH` (board revision + firmware version encoded in the filename).
+- **As of firmware V1.0.8, the file format changed from `.FLH` to a signed/encoded `.EFW` format.** The updater validates the `.EFW` file's signature, format, and contents before writing to flash, rejecting invalid or incompatible files up front. Older `.FLH` files are no longer accepted once a unit is running V1.0.8 or later — keep them only for units you don't plan to update further.
+- Pre-V1.0.8 firmware files were named like `CC3-BOARDV1-2-FW1-0-2.FLH` (board revision + firmware version encoded in the filename) and were board-revision-specific. From V1.0.8 onward, firmware is universal across board revisions — the board revision (1.2/1.3) is selected in the Firmware menu instead.
 
 ## Step-by-step update
 
-1. Download the `.FLH` firmware file for your board revision (see [firmware-changelog.md](../04-management/firmware-changelog.md) for download links per version).
+**Routine update (already on V1.0.8 or later):**
+
+1. Download the `.EFW` firmware file (see [firmware-changelog.md](../04-management/firmware-changelog.md) for the current release).
 2. Copy the file to the **root of the SD card**.
 3. On the device, press **F12** to open the **on-screen menu**, then **F** for the Firmware Upgrade menu (see [menu-navigation.md](menu-navigation.md)).
 4. Select the **Flash Firmware** option from that menu and flash the new firmware.
+
+**One-time transition to V1.0.8 (if you're still on V1.06 or earlier):** this requires two stages, since the old `.FLH`-based units can't jump straight to a `.EFW` file. See the [V1.0.8 entry in firmware-changelog.md](../04-management/firmware-changelog.md) for the full two-stage process — in short: flash the `.FLH` transition firmware first (same steps as above, old format), let the device restart, then flash the `.EFW` second-stage firmware (same steps, new format). The second stage is what adds the board-revision selector to the Firmware menu; skipping it isn't harmful, it just leaves a few non-functional V1.3-only menu options visible on V1.2 boards.
 
 ## Release notes / changelog
 

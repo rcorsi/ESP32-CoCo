@@ -2,7 +2,8 @@
 
 ## Connector / interface
 
-- **USB Low Speed (1.5 Mbps) only** — the actual constraint is narrower than "USB 1.1" alone suggests. ESP32-COCO uses a USB "Soft Host" library that can only handle **Low Speed (1.5 Mbps)** devices, not **Full Speed (12 Mbps)** — most USB 1.1 peripherals — or **High Speed (480 Mbps)**, i.e. USB 2.0+. This is why compatibility has been hit-or-miss even among older USB 1.1 keyboards: being "USB 1.1" doesn't guarantee it negotiates at Low Speed. (Source: Cedric, via discussion with Rocco Corsi on the CoCo Discord's #esp32-coco channel.)
+- **USB Low Speed (1.5 Mbps) only in Soft USB mode (the default)** — the actual constraint is narrower than "USB 1.1" alone suggests. ESP32-COCO's Soft USB library can only handle **Low Speed (1.5 Mbps)** devices, not **Full Speed (12 Mbps)** — most USB 1.1 peripherals — or **High Speed (480 Mbps)**, i.e. USB 2.0+. This is why compatibility has been hit-or-miss even among older USB 1.1 keyboards: being "USB 1.1" doesn't guarantee it negotiates at Low Speed. (Source: Cedric, via discussion with Rocco Corsi on the CoCo Discord's #esp32-coco channel.)
+- **As of firmware V1.0.8, a "Native USB" mode exists as an alternative** — using the ESP32's own USB host, which should widen keyboard compatibility, but limits the device to one keyboard + one joystick at a time and needs extra adapter hardware. See [Native USB mode](../03-compatible-hardware/joysticks-and-controllers.md#native-usb-mode-firmware-v108) in joysticks-and-controllers.md.
 - **Connector type: classic USB-A ports.**
 
 ## Practical buying guidance

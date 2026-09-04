@@ -4,7 +4,17 @@
 
 - From the **F12** menu, press **J** for the Joystick menu — see [menu-navigation.md](menu-navigation.md).
 
-## Selecting which port you're configuring
+## Two USB modes (firmware V1.0.8+)
+
+As of firmware V1.0.8, joystick input works differently depending on which USB mode the device is using:
+
+- **Soft USB mode** (the original mode, still the default unless you've set up Native USB hardware): each of the 2 USB ports has its own independent joystick configuration, as described below. No swap option is shown.
+- **Native USB mode** (new — uses the ESP32's own built-in USB host instead of the software-emulated "Soft USB" stack; requires extra hardware, see [Native USB hardware setup](../03-compatible-hardware/joysticks-and-controllers.md#native-usb-mode-firmware-v108)): the USB host can only handle **2 devices total — one keyboard and one joystick**. Since just one joystick can be connected, pressing **S** swaps that joystick between the CoCo's left and right port instead of using two separate configs — and this can be done **while a game is running**.
+- **Hardware revision differences:** board revision **V1.3** keeps the optional physical **CoCo Port** joystick interface (see CoCo Port below); revision **V1.2** automatically hides menu options for hardware it doesn't have.
+
+The rest of this page (items 1–6, Digital/Analog/CoCo Port configuration) describes **Soft USB mode**, which is what the existing screenshots below show. TODO: capture Native USB mode's own menu screens once available.
+
+## Selecting which port you're configuring (Soft USB mode)
 
 - **Item 1 — Select LEFT or RIGHT joystick setup**: chooses which of the two USB joystick ports you're configuring, mirroring the original CoCo's "left/right joystick" terminology. Each port (Left, Right) has its own independent type and button/axis configuration — set up one, then switch item 1 to the other port and repeat if you're using two controllers.
 

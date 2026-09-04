@@ -14,7 +14,7 @@ ESP32-COCO is aimed at retro computing hobbyists. Real CoCo 3 hardware is scarce
 
 ## What it emulates
 
-- **CPU**: Motorola 68B09.
+- **CPU**: Motorola MC6809 by default. As of firmware **V1.0.8**, the emulator can also switch to a **Hitachi HD6309** core instead, selectable from the emulator menu (the HD6309 is a faster, extended-instruction-set successor to the 6809, used in some real CoCo 3 upgrade projects). See [firmware-changelog.md](../04-management/firmware-changelog.md#v108--universal-firmware-all-board-revisions).
 - **GIME**: the GIME chip is emulated — see [What it is](#what-it-is) above for why this matters (GIME chips are no longer produced).
 - **Sound**: the CoCo doesn't have a dedicated sound chip — sound is produced by a simple 6-bit DAC, which ESP32-COCO emulates.
 - Emulates a CoCo 3, which is backward compatible with CoCo 1 and CoCo 2 software — there is no separate/explicit CoCo 1 or CoCo 2 mode.

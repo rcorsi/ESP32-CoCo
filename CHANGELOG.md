@@ -2,6 +2,24 @@
 
 All notable changes to this documentation set are logged here (not to be confused with ESP32-COCO firmware changes — those belong in [02-menus-and-shortcuts/firmware-upgrade-menu.md](02-menus-and-shortcuts/firmware-upgrade-menu.md)).
 
+## 2026-09-04 (15)
+
+**Firmware V1.0.8 released — major, cross-cutting update touching most of `01-getting-started/` and `02-menus-and-shortcuts/`.**
+
+- **firmware-changelog.md**: added the full V1.0.8 entry — selectable CPU core (Motorola MC6809 / Hitachi HD6309), new Xternal ROM menu (custom 8192-byte ROM from SD card), redesigned joystick menu (Native USB vs. Soft USB), cassette menu now board-aware, board revision (1.2/1.3) selectable from the Firmware menu instead of baked into separate builds, new signed `.EFW` file format replacing `.FLH`, several bug fixes (artifact-disabled garbage line, PIA registers, GIME FIRQ source). Documented the required **two-stage update** (old `.FLH` transition firmware, then new `.EFW` second stage) and updated the top note block (V1.0.8 is current, firmware now universal across board revisions).
+- **firmware-upgrade-menu.md**: rewrote Update methods and Step-by-step update to cover the new `.EFW` format and the one-time two-stage transition process for units still on V1.06 or earlier.
+- **overview.md**: CPU line updated to reflect the selectable MC6809/HD6309 core (aligned naming with "MC6809" per the release notes, was "68B09").
+- **hardware-specs.md**: added the board-revision-selectable-in-firmware note under Revisions; clarified the physical cassette port is **V1.3-only** (V1.2 has no cassette hardware, Virtual Tape only); added a Native USB mode summary line under Input, cross-referenced to joysticks-and-controllers.md.
+- **menu-navigation.md**: added the new Xternal ROM menu to the F12 menu table (shortcut key unconfirmed, guessed as **X** per the naming pattern — flagged as TODO); noted the Firmware Upgrade menu now also selects board revision.
+- **joystick-menu.md**: added a "Two USB modes" section distinguishing Soft USB (original, default, independent per-port config, documented in the rest of the page) from Native USB (new, 1 keyboard + 1 joystick limit, **S** swaps the joystick between left/right ports including mid-game) and the V1.2/V1.3 hardware option differences.
+- **cassette-menu.md**: clarified the VIRTUAL/EXTERNAL source toggle only exists on V1.3 boards; V1.2 boards stay in Virtual Tape automatically with no toggle shown.
+- **joysticks-and-controllers.md**: added a full "Native USB mode" section — what it is, the 1-keyboard-+-1-joystick trade-off, and the two extra hardware pieces needed (small USB hub + micro-USB power-bypass splitter cable, links supplied by the doc maintainer). Noted the CoCo Port expansion module requires V1.3.
+- **keyboards.md**: cross-referenced Native USB mode as a possible way to widen keyboard compatibility beyond Low Speed-only, with the same hardware/device-count trade-off.
+- **features.md**: capability matrix updated — added Selectable CPU core and Xternal ROM rows; updated Cassette loading (V1.3-only physical option), Joystick support, Keyboard support, and Firmware updates rows to reflect V1.0.8 changes.
+- Full link-integrity sweep after all edits: 193 relative links checked, 0 broken.
+- **Clarified Xternal ROM's intended use** across firmware-changelog.md, menu-navigation.md, and features.md: it's for swapping in different 8K RSDOS boot ROM variants, not for loading ROMs extracted from CoCo Program Paks/cartridges. Noted some 8K Program Pak ROM dumps have reportedly worked anyway, but that's unsupported/not guaranteed. Also added a clarifying note to the unrelated "Cartridge / ROM pak emulation" row in features.md to prevent the two being conflated.
+- **menu-navigation.md**: confirmed the Xternal ROM menu's shortcut key is **X**; resolved the TODO in the F12 menu table and shortcut-letter list.
+
 ## 2026-08-26 (14)
 
 - **Firmware V1.06 released** — documented in `firmware-changelog.md`: CoCo 3 emulation now runs at full speed (was ~80%), fixed a Timer bug (FF93), added support for the Montezuma's Revenge game port (Lee Perkins). Ships as separate builds per board revision (V1.2 no-HDMI / V1.3 HDMI+Cassette), distributed via GitHub Releases rather than Google Drive going forward. Updated the top note block: V1.06 is now current, V1.05 confirmed superseded (never published), and added the cross-flashing safety note (any firmware works on either board, unsupported menu options just do nothing).

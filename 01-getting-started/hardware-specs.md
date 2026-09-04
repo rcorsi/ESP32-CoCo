@@ -25,8 +25,9 @@
 
 ## Input
 
-- **Keyboard**: classic **USB-A** connector, and specifically **USB Low Speed (1.5 Mbps) only** — not Full Speed (12 Mbps) or High Speed (480 Mbps, USB2/3). See [keyboards.md](../03-compatible-hardware/keyboards.md) for why, and a possible adapter workaround.
-- **Joysticks**: 2× USB-A Low Speed ports, supports both analog pads and digital controllers. See [joysticks-and-controllers.md](../03-compatible-hardware/joysticks-and-controllers.md).
+- **Keyboard**: classic **USB-A** connector, and specifically **USB Low Speed (1.5 Mbps) only** in the default Soft USB mode — not Full Speed (12 Mbps) or High Speed (480 Mbps, USB2/3). See [keyboards.md](../03-compatible-hardware/keyboards.md) for why, and a possible adapter workaround.
+- **Joysticks**: 2× USB-A Low Speed ports (Soft USB mode), supports both analog pads and digital controllers. See [joysticks-and-controllers.md](../03-compatible-hardware/joysticks-and-controllers.md).
+- **Native USB mode (firmware V1.0.8+)**: an alternative to Soft USB using the ESP32-S3's own built-in USB host, likely with wider device compatibility — but limited to 1 keyboard + 1 joystick at once, and requires extra adapter hardware. See [Native USB mode](../03-compatible-hardware/joysticks-and-controllers.md#native-usb-mode-firmware-v108).
 
 ## Expansion port
 
@@ -39,7 +40,8 @@
 
 ## Cassette port
 
-- Two 3.5 mm (1/8") jacks: **CAS** and **CTL** (relay). **CAS is bidirectional** — it carries both cassette in (loading) and cassette out (saving), unlike separate mono in/out jacks on some real tape decks.
+- **Physical cassette port is V1.3-only.** Board revision V1.2 has no physical cassette hardware and can only use Virtual Tape (`.WAV` files from the SD card) — see [cassette-menu.md](../02-menus-and-shortcuts/cassette-menu.md).
+- On V1.3: two 3.5 mm (1/8") jacks: **CAS** and **CTL** (relay). **CAS is bidirectional** — it carries both cassette in (loading) and cassette out (saving), unlike separate mono in/out jacks on some real tape decks.
 - To connect a real CoCo tape deck (which has separate mono in/out jacks), you'll need a **1/8" stereo-to-mono Y-splitter cable** to break the bidirectional CAS signal out into separate in/out connections.
 - **CTL** is a simple mono signal — just a plain **1/8" mono-to-mono cable**, end to end, no splitter needed.
 - See [cassette-menu.md](../02-menus-and-shortcuts/cassette-menu.md) for loading/saving programs via this port.
@@ -64,6 +66,8 @@
 | Board revision | Notes |
 |---|---|
 | V1.2 | VGA version |
-| V1.3 | HDMI + Option port (for joystick module) |
+| V1.3 | HDMI + Option port (for joystick module) + physical cassette port |
 
+- Through firmware V1.06, firmware builds were board-revision-specific (separate `.FLH` files for V1.2 vs. V1.3).
+- **As of firmware V1.0.8, firmware is universal** — one build supports both revisions, with the board revision selected from the Firmware menu and saved to the ESP32's non-volatile storage. The menu and available features adjust automatically for whichever revision is selected. See [firmware-changelog.md](../04-management/firmware-changelog.md#v108--universal-firmware-all-board-revisions).
 - TODO: track hardware revisions here as more are confirmed
